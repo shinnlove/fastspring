@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Spring-Parent: com.shinnlove.fastspring.biz.shared
