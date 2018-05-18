@@ -18,13 +18,50 @@
     <url>http://maven.apache.org</url>
 
     <dependencies>
+        <!-- spring集成 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <!-- 这个jar版本较低，但是较高的quartz和spring结合用法有点区别，暂时先使用这个jar，注意：和spring-context-support不一样 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-support</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+
         <!-- 下层模块依赖 -->
         <dependency>
             <groupId>com.shinnlove.fastspring</groupId>
             <artifactId>fastspring-common-util</artifactId>
         </dependency>
-        
+
         <!-- 在此加入仓储层的依赖 -->
+
+        <!-- 单元测试，项目创建好默认就有 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- 切面编程 -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
+
         <!-- h2数据库 -->
         <dependency>
             <groupId>com.h2database</groupId>
@@ -70,6 +107,7 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
+
     </dependencies>
 
 </project>
