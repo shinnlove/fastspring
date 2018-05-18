@@ -430,6 +430,12 @@
 
             <dependency>
                 <groupId>com.shinnlove.fastspring</groupId>
+                <artifactId>fastspring-common-dal</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.shinnlove.fastspring</groupId>
                 <artifactId>fastspring-common-service-integration</artifactId>
                 <version>1.0</version>
             </dependency>

@@ -18,6 +18,12 @@
     <url>http://maven.apache.org</url>
 
     <dependencies>
+        <!-- 下层模块依赖 -->
+        <dependency>
+            <groupId>com.shinnlove.fastspring</groupId>
+            <artifactId>fastspring-biz-shared</artifactId>
+        </dependency>
+
         <!-- 加入biz-zookeeper的依赖 -->
 
     </dependencies>

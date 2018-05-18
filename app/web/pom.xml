@@ -21,7 +21,7 @@
         <!-- 下层模块依赖 -->
         <dependency>
             <groupId>com.shinnlove.fastspring</groupId>
-            <artifactId>fastspring-core-model</artifactId>
+            <artifactId>fastspring-biz-zookeeper</artifactId>
         </dependency>
 
         <!-- J2EE servlet api -->

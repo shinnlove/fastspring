@@ -18,6 +18,27 @@
     <url>http://maven.apache.org</url>
 
     <dependencies>
+        <!-- 下层模块依赖 -->
+        <dependency>
+            <groupId>com.shinnlove.fastspring</groupId>
+            <artifactId>fastspring-common-service-integration</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.shinnlove.fastspring</groupId>
+            <artifactId>fastspring-common-service-facade</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.shinnlove.fastspring</groupId>
+            <artifactId>fastspring-common-dal</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.shinnlove.fastspring</groupId>
+            <artifactId>fastspring-core-model</artifactId>
+        </dependency>
+
         <!-- 加入core-service的依赖 -->
 
     </dependencies>

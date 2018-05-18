@@ -18,6 +18,12 @@
     <url>http://maven.apache.org</url>
 
     <dependencies>
+        <!-- 下层模块依赖 -->
+        <dependency>
+            <groupId>com.shinnlove.fastspring</groupId>
+            <artifactId>fastspring-core-service</artifactId>
+        </dependency>
+
         <!-- 加入biz-shared的依赖 -->
 
     </dependencies>
