@@ -20,6 +20,7 @@
             <param-name>contextConfigLocation</param-name>
             <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
         </init-param>
+        <!-- 重要：`HttpServlet`的init()方法是否在Tomcat类的Web服务器启动的时候就实例化，1代表是；0或者不配置只有等到servlet被调用的时候才会实例化(基本上都提前部署) -->
         <load-on-startup>1</load-on-startup>
         <async-supported>true</async-supported>
     </servlet>
