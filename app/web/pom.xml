@@ -24,6 +24,13 @@
             <artifactId>fastspring-biz-zookeeper</artifactId>
         </dependency>
 
+        <!-- 单元测试，项目创建好默认就有 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
         <!-- J2EE servlet api -->
         <dependency>
             <groupId>javax.servlet</groupId>

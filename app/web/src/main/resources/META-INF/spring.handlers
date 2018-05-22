@@ -1,0 +1,2 @@
+http\://www.shinnlove.com/schema/people=com.shinnlove.fastspring.web.config.schema.handler.StudentNamespaceHandler
+http\://www.shinnlove.com/schema/sync=com.shinnlove.fastspring.web.config.schema.handler.SyncNamespaceHandler

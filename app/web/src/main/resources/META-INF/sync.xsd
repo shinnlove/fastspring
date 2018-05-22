@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.shinnlove.com/schema/sync"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:beans="http://www.springframework.org/schema/beans"
+            targetNamespace="http://www.shinnlove.com/schema/sync"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+
+    <xsd:import namespace="http://www.springframework.org/schema/beans"/>
+
+    <xsd:element name="annotation-driven">
+        <xsd:annotation>
+            <xsd:documentation source="java:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"><![CDATA[
+	Configures the annotation-driven Spring MVC Controller programming model.
+	Note that this tag works in Web MVC only, not in Portlet MVC!
+
+	See org.springframework.web.servlet.config.annotation.EnableWebMvc javadoc for details
+	on code-based alternatives to enabling annotation-driven Spring MVC support.
+			]]></xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="action">
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="beans:identifiedType">
+
+                    <xsd:attribute name="item" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>数据项</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+
+                    <xsd:attribute name="handler" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>数据同步器</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+
+                    <xsd:attribute name="transfer" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>数据转换器</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+
+                    <xsd:attribute name="callback" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>回调处理</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+
+                    <xsd:attribute name="mode" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>同步异步模式</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+
+                </xsd:extension>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

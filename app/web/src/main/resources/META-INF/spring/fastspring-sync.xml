@@ -6,43 +6,33 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:amq="http://activemq.apache.org/schema/core"
-       xmlns:people="http://www.shinnlove.com/schema/people"
+       xmlns:sync="http://www.shinnlove.com/schema/sync"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
-       http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd http://www.shinnlove.com/schema/people http://www.shinnlove.com/schema/people.xsd"
+       http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd
+       http://www.shinnlove.com/schema/sync http://www.shinnlove.com/schema/sync.xsd"
        default-autowire="byName">
 
-    <!-- 在这里配置各种bean -->
+    <!-- type1：开启bundle内src/main/java下注解自动扫描 -->
+    <sync:annotation-driven />
 
-    <mvc:annotation-driven />
+    <!-- type2：使用类似sofa:service标签 -->
+    <sync:action item="UCM_BRANCH_INST"  mode="async"
+                 handler="commonDataSyncProcessHandler"
+                 transfer="masterDataInstModelTransfer"
+                 callback="commonProcessCallBack"/>
 
-    <mvc:interceptors>
-        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
-        <mvc:interceptor>
-            <mvc:mapping path="/**" />
-            <mvc:exclude-mapping path="/admin/**" />
-            <mvc:exclude-mapping path="/images/**" />
-            <bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor"/>
-        </mvc:interceptor>
-    </mvc:interceptors>
-
-    <!-- 载入common-dal层的资源 -->
-    <import resource="classpath:META-INF/spring/spring-database.xml"/>
-    <import resource="classpath:META-INF/spring/common-dal.xml"/>
-
-    <!-- spring自定义schema与标签 -->
-    <people:student id="student1" name="金升" age="18"/>
-
-    <people:student id="student2" name="倩倩" age="20" />
-
-    <!-- 普通定义bean -->
-    <bean id="student3" class="com.shinnlove.fastspring.web.config.schema.student.Student">
-        <property name="name" value="金依蓓"/>
-        <property name="age" value="23"/>
+    <!-- type3：古老XML方式 handler(不建议用) -->
+    <bean id="instAction" class="com.shinnlove.fastspring.web.config.schema.sync.action.Action">
+        <property name="item" value="UCM_HEAD_INST"/>
+        <property name="mode" value="async"/>
+        <property name="handler" value="commonDataSyncProcessHandler"/>
+        <property name="transfer" value="masterDataInstModelTransfer"/>
+        <property name="callback" value="commonProcessCallBack"/>
     </bean>
 
 </beans>
