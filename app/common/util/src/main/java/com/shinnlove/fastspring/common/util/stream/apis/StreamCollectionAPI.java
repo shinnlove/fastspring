@@ -26,7 +26,8 @@ public class StreamCollectionAPI {
         // 流式操作：并行处理流、过滤、排序、循环、收集(去掉`.reversed()`可以让集合正着排序)
         List<Integer> transactionsIds = transactions.parallelStream()
             .filter(t -> t.getType() == Transaction.GROCERY)
-            .sorted(Comparator.comparing(Transaction::getValue).reversed()).map(Transaction::getId)
+            .sorted(Comparator.comparing(Transaction::getValue).reversed())
+            .filter(s -> s.getType() == Transaction.GROCERY).map(Transaction::getId)
             .collect(Collectors.toList());
 
         // 输出结果[2,4]，因为反向排序了
