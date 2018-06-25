@@ -41,7 +41,7 @@ public class SpringDetector {
         // 3、传递性(三者传导)、
         // 4、一致性(等价比较信息不变无论多少次都相等)、
         // 5、对任何不是null的x，x.equals(null)一定返回false。
-        // 因此如果要使用自己的类作为HashMap的键，必须同时重载hashCode()和equals()!!
+        // 因此如果要使用自己的类作为HashMap的键，必须同时重载hashCode()和equals()! !
         if (map.containsKey(gh)) {
             System.out.println("Key has been found!");
             System.out.println(map.get(gh));
