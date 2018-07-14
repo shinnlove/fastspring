@@ -20,7 +20,7 @@ import net.sf.cglib.proxy.MethodProxy;
  */
 public class ShipProxy implements MethodInterceptor {
 
-    /** cglib enhancer增强 */
+    /** cglib enhancer 字节码 增强 */
     private Enhancer enhancer = new Enhancer();
 
     /**
